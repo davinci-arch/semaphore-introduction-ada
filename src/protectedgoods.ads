@@ -4,7 +4,7 @@ package ProtectedGoods is
    function getAndDecreaseProducedGood return Integer;
    
 private
-   consumedGoods: Integer := 16;
-   producedGoods: Integer := 16;
+   consumedGoods: Integer := 10;
+   producedGoods: Integer := 10;
 
 end ProtectedGoods;
