@@ -1,19 +1,25 @@
 package body ProtectedGoods is
 
-   function getAndDecreaseConsumedGood return Integer is
-      tmp: Integer;
-   begin
-      tmp := consumedGoods;
-      consumedGoods := consumedGoods - 1;
-      return tmp;
-   end getAndDecreaseConsumedGood;
-   
-   function getAndDecreaseProducedGood return Integer is
-      tmp: Integer;
-   begin
-      tmp := producedGoods;
-      producedGoods := producedGoods - 1;
-      return tmp;
-   end getAndDecreaseProducedGood;
-
+   protected body Goods is
+      
+      
+      function isConsumptionDone return Boolean is
+         begin
+         return consumedGoods = 0;
+      end isConsumptionDone;
+      function isProductionDone return Boolean is
+         begin
+         return producedGoods = 0;
+      end isProductionDone;
+      
+      procedure decrementConsumedGood is 
+      begin
+         consumedGoods := consumedGoods - 1;
+      end decrementConsumedGood;
+      
+      procedure decrementProducedGood is
+      begin
+         producedGoods := producedGoods - 1;
+      end decrementProducedGood;
+   end Goods;
 end ProtectedGoods;

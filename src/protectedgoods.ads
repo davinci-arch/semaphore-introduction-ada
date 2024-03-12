@@ -1,10 +1,15 @@
 package ProtectedGoods is
 
-   function getAndDecreaseConsumedGood return Integer;
-   function getAndDecreaseProducedGood return Integer;
-   
-private
-   consumedGoods: Integer := 10;
-   producedGoods: Integer := 10;
-
+   protected Goods is
+      
+      procedure decrementConsumedGood;
+      procedure decrementProducedGood;
+      
+      function isConsumptionDone return Boolean;
+      function isProductionDone return Boolean;
+      
+   private
+      consumedGoods: Integer := 10;
+      producedGoods: Integer := 10;
+   end Goods;
 end ProtectedGoods;

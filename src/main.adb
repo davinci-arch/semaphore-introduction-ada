@@ -10,7 +10,7 @@ procedure Main is
    storageSize: Integer := 3;
 begin
 
-   Put_Line("Write amount of produser: ");
+   Put_Line("Write amount of producer: ");
    Get(amountOfProduser);
    Put_Line("Write amount of consumer: ");
    Get(amountOfConsumer);
